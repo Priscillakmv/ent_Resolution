@@ -1,0 +1,50 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package apc;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Priscilla
+ */
+public class MaximumFinder 
+{
+   // obtém três valores de ponto flutuante e localiza o valor máximo
+   public void determineMaximum()
+   {
+      // cria Scanner para entrada a partir da janela de comando
+      Scanner input = new Scanner( System.in );
+
+      // obtém a entrada do usuário
+      System.out.print( "Enter three floating-point values separated by spaces: " );
+      double number1 = input.nextDouble(); // lê o primeiro double
+      double number2 = input.nextDouble(); // lê o segundo double
+      double number3 = input.nextDouble(); // lê o terceiro double
+
+      // determina o valor máximo
+      double result = maximum( number1, number2, number3 );
+
+      // exibe o valor máximo
+      System.out.println("Maximum is: " + result);
+   } // fim do método determineMaximum
+
+   // retorna o máximo dos seus três parâmetros de double
+   public double maximum( double x, double y, double z )          
+   {                                                              
+      double maximumValue = x; // supõe que x é o maior valor inicial
+                                                                  
+      // determina se y é maior que maximumValue
+      if ( y > maximumValue )                                     
+         maximumValue = y;                                        
+                                                                  
+      // determina se z é maior que maximumValue
+      if ( z > maximumValue )                                     
+         maximumValue = z;                                        
+                                                                  
+      return maximumValue;                                        
+   } // fim do método maximum                                        
+} // fim da classe MaximumFinder
